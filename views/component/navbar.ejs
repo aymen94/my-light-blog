@@ -1,0 +1,89 @@
+<nav class="light-blue z-depth-4">
+  <div class="nav-wrapper container">
+    <a href="/" class="brand-logo">My light blog</a>
+    <a href="#" data-activates="mobile" class="button-collapse">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <div class="center row">
+          <div class="col s12 ">
+            <div class="row">
+              <form method="get" action="/search">
+                <div class="input-field col s6 s12 white-text">
+                  <i class="white-text material-icons prefix">search</i>
+                  <input type="text" name="q" placeholder="search..." class="white-text">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="/">
+          <i class="material-icons">home</i>
+        </a>
+      </li>
+      <li>
+        <a href="/author">Author</a>
+      </li>
+      <% if(user){ %>
+        <li>
+          <a href="/dashboard">Dashboard</i>
+          </a>
+        </li>
+        <li>
+          <a href="/logout">Logout</i>
+          </a>
+        </li>
+        <% }else{ %>
+          <li>
+            <a href="/login">
+              <i class="material-icons">vpn_key</i>
+            </a>
+          </li>
+          <%}%>
+    </ul>
+  </div>
+</nav>
+
+<ul class="side-nav" id="mobile">
+  <li>
+    <a href="/">
+      <i class="material-icons">home</i>
+    </a>
+  </li>
+  <li>
+    <a href="/author">Author</a>
+  </li>
+  <% if(user){ %>
+    <li>
+      <a href="/dashboard">Dashboard</i>
+      </a>
+    </li>
+    <li>
+      <a href="/logout">Logout</i>
+      </a>
+    </li>
+    <% }else{ %>
+      <li>
+        <a href="/login">
+          <i class="material-icons">vpn_key</i>
+        </a>
+      </li>
+      <%}%>
+        <li>
+          <div class="center row">
+            <div class="col s12 ">
+              <div class="row">
+                <form method="get" action="/search">
+                  <div class="input-field col s6 s12 black-text">
+                    <i class="black-text material-icons prefix">search</i>
+                    <input type="text" name="q" placeholder="search..." class="black-text">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+</ul>

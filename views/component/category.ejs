@@ -1,0 +1,10 @@
+<div class="col s12 m12 l3 category">
+    <ul class="collection with-header z-depth-4">
+        <li class="collection-header">
+            <h4>Category</h4>
+        </li>
+        <% for(let c of category){ %>
+        <a class="collection-item light-blue-text" href="/category/<%=c.id%>"><%=c.name%></a>
+        <%}%>
+    </ul>
+    </div>
