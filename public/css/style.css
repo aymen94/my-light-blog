@@ -1,0 +1,25 @@
+body {
+    font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container{
+    flex: 1 0 auto;
+}
+
+.margin{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.category{
+    margin-top:130px;
+}
+
+.bloginfo{
+    display:inline-block;
+    color:black;
+    margin: 0 5% 5% 0;
+}
