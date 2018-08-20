@@ -1,6 +1,8 @@
 -- Database: My light blog --
 
-CREATE SCHEMA my_light_blog;
+CREATE SCHEMA my_light_blog
+CHARACTER SET utf8 
+COLLATE utf8_general_ci;
 
 -- user table --
 CREATE TABLE my_light_blog.`user`(
@@ -8,7 +10,7 @@ CREATE TABLE my_light_blog.`user`(
     `name` VARCHAR(20) NOT NULL,
     lastname  VARCHAR(25),
     email VARCHAR(40) UNIQUE NOT NULL,
-    `password` CHAR(128)
+    `password` CHAR(64)
 );
 
 -- category table --
@@ -26,6 +28,7 @@ CREATE TABLE my_light_blog.post(
 	body TEXT,
     `date` TIMESTAMP,
 	FOREIGN KEY (`user`) REFERENCES `user`(id),
-	FOREIGN KEY (`category`) REFERENCES `category`(id)
+	FOREIGN KEY (`category`) REFERENCES `category`(id),
+	FULLTEXT(title,body)
 );
 
