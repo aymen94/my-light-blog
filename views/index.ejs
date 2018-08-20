@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My light blog</title>
+    
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    <!-- style -->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <% include ./component/navbar %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l9">
+                <h1>My light blog</h1>
+                <div class="row">
+
+                <!-- postList -->
+                <% for(let i of post){ %>
+                        <%- include('./component/card', {p: i}); %>
+                <% } %>
+                </div>
+            </div>
+            
+            <!-- categoryList -->
+            <%- include('./component/category', {category}); %>
+
+        </div>
+
+        <!-- pagination -->
+        <% if(page){ page=parseInt(page); %>
+        <ul class="pagination">
+            <% if(page!=1){ %>
+            <li class="waves-effect"><a href="/page/<%= page-1 %>"><%= page-1 %></a></li>
+            <% } %>
+            <li class="active"><a href="/page/<%= page %>"><%= page %></a></li>
+            <% if(post.length>=5){ %>
+            <li class="waves-effect"><a href="/page/<%= page+1 %>"><%= page+1 %></a></li>
+            <% } %> 
+         </ul>
+        <%}%>
+    </div>
+
+    <!-- footer -->
+    <% include ./component/footer %>
+
+    <!-- script -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

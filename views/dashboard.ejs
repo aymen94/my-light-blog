@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My light blog</title>
+
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <% include ./component/navbar %>
+
+        <div class="container">
+            <h1>DashBoard</h1>
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="card-content">
+                        <h4>add post</h4>
+                        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#addPost">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card-content">
+                        <h4>add category</h4>
+                        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#addCategory">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card-content">
+                        <h4>add user</h4>
+                        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#addUser">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card-content">
+                        <h4>delete post</h4>
+                        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#deletePost">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card-content">
+                        <h4>delete category</h4>
+                        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#deleteCategory">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                <div class="card-content">
+                    <h4>click for refresh</h4>
+                    <a onclick="location.reload()"class="btn-floating btn-large waves-effect waves-light light-blue"><i class="material-icons">refresh</i></a>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal add post -->
+        <div id="addPost" class="modal">
+            <div class="modal-content">
+                <h4>add post</h4>
+                <div class="row">
+                    <form class="col s12" id="addPostForm">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="p_title" id="p_title" type="text" data-length="200">
+                                <label for="p_title">Title</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <select name="p_category">
+                                    <option disabled selected>Choose category</option>
+                                    <% for(c of category){ %>
+                                        <option value="<%=c.id%>">
+                                            <%=c.name%>
+                                        </option>
+                                        <%}%>
+                                </select>
+                                <label>Category</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea name="p_body" id="p_body" class="materialize-textarea"></textarea>
+                                <label for="p_body">Textarea</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="modal-close waves-effect waves-green btn red">Publish</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal add category -->
+        <div id="addCategory" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>add category</h4>
+                <div class="row">
+                    <form class="col s12" id="addCategoryForm">
+                        <div class="input-field col s6">
+                            <input id="c_name" type="text" name="c_name" data-length="50" autocomplete="off" required>
+                            <label for="c_name">name category</label>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn modal-close waves-effect waves-light red">add
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal add user -->
+        <div id="addUser" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4>add post</h4>
+                <div class="row">
+                    <form class="col s12" id="addUserForm">
+                        <div class="col s12 row">
+                            <div class="input-field col s6">
+                                <input name="u_name" id="u_name" type="text" data-length="20" required>
+                                <label for="u_name">name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="u_lastname" id="u_lastname" type="text" data-length="25" required>
+                                <label for="u_lastname">lastname</label>
+                            </div>
+                        </div>
+                        <div class="col s12 row">
+                            <div class="input-field col s6">
+                                <input name="u_email" id="u_email" type="email" data-length="40" required>
+                                <label for="u_email">email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="u_password" id="u_password" type="text" required>
+                                <label for="u_password">password</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class=" btn modal-close waves-effect waves-green red">Add User</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- delete post -->
+        <div id="deletePost" class="modal">
+            <div class="modal-content">
+                <ul class="collection with-header">
+                    <li class="collection-header">
+                        <h4>delete post</h4>
+                    </li>
+                    <% for(p of post){ %>
+                        <li class="collection-item"><div><%= p.title %><a onclick="deletePost(<%= c.id %>,this)" class="secondary-content btn-flat red-text"><i class="material-icons">delete</i></a></div></li>
+                        <% } %>
+                </ul>
+            </div>
+        </div>
+
+        <!-- delete category -->
+        <div id="deleteCategory" class="modal">
+            <div class="modal-content">
+                <ul class="collection">
+                    <% for(c of category){ %>
+                    <li class="collection-item dismissable"><div><%= c.name %><a onclick="deleteCategory(<%= c.id %>,this)" class="secondary-content btn-flat red-text"><i class="material-icons">delete</i></a></div></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <!-- footer -->
+        <% include ./component/footer %>
+
+            <!-- script -->
+            <script src="/assets/js/jquery-3.3.1.min.js"></script>
+            <script src="/assets/js/materialize.min.js"></script>
+            <script src="/assets/js/main.js"></script>
+            <script src="/assets/js/dashboard.js"></script>
+
+</body>
+
+</html>

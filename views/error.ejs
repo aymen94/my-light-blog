@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error <%=status%> ||My light blog</title>
+
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- style -->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <% include ./component/navbar %>
+
+        <div class="container">
+            <div class="row">
+                <h1><%=status%></h1>
+                <h2><%=message%></h2>
+            </div>
+        </div>
+
+    <!-- footer -->
+    <% include ./component/footer %>
+
+     <!-- script -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>login</title>
+
+  <!-- Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- style -->
+  <link rel="stylesheet" href="./assets/css/materialize.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <% include ./component/navbar %>
+
+  <div class="valign-wrapper row" style="height: 100%;">
+    <div class="col card hoverable s12 m12 l12">
+    <h1>My light blog</h1>
+      <form>
+        <div class="card-content  z-depth-4">
+          <span class="card-title">Login</span>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mail_outline</i>
+              <input class="validate" name="email" type="email" required />
+              <label for="email" data-error="wrong" data-success="right">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">lock_outline</i>
+              <input name="password" type="password" required />
+              <label for="password">Password</label>
+            </div>
+          </div>
+        </div>
+        <div class="card-action right-align">
+          <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
+          <button class="btn light-blue waves-effect waves-light">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <% include ./component/footer %>
+
+  <!-- script -->
+  <script src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/materialize.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/login.js"></script>
+
+</body>
+
+</html>

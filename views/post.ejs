@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= post.title %> || My light blog</title>
+
+  <!-- Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- style -->
+  <link rel="stylesheet" href="/assets/css/materialize.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <%- include ./component/navbar %>
+
+    <div class="container">
+      <h1>
+        <%= post.title %>
+      </h1>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card z-depth-4">
+            <div class="card-content">
+              <span class="bloginfo">
+                <h5>
+                  <i class="material-icons">
+                    account_box
+                  </i> Author</h5>
+                <%= post.name%>
+                  <%= post.lastname%>
+              </span>
+              <span class="bloginfo">
+                <h5>Category</h5>
+                <a href="/category/<%= post.categoryId %>">
+                  <%= post.category%>
+                </a>
+              </span>
+              <span class="bloginfo">
+                <h5>
+                  <i class="material-icons">
+                    today
+                  </i> Date</h5>
+                <%= post.date.toString().split(' ',4).join() %>
+              </span>
+              <p class="flow-text">
+                <%- post.body.replace(/\n/g, '<br/>') %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- footer -->
+  <%- include ./component/footer %>
+
+      <!-- script -->
+      <script src="/assets/js/jquery-3.3.1.min.js"></script>
+      <script src="/assets/js/materialize.min.js"></script>
+      <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

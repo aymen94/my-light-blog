@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Author</title>
+    
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+    <!-- style -->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <% include ./component/navbar %>
+
+    <div class="container">
+            <table class="highlight margin">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let a of author){ %>
+                        <tr>
+                            <td>
+                                <%=a.name %>
+                            </td>
+                            <td>
+                                <%=a.lastname %>
+                            </td>
+                            <td>
+                                <%=a.email %>
+                            </td>
+                        </tr>
+                        <% }; %>
+                </tbody>
+            </table>
+    </div>
+    <!-- footer -->
+    <% include ./component/footer %>
+
+    <!-- script -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
