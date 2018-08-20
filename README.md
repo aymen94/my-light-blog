@@ -52,4 +52,12 @@ easy blog with nodejs, expressjs, mysql, materializecss
 contributions are more than welcome!
 
 ## Screen
+![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/home.png)
+
+![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/login.png)
+
+![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/dashboard.png)
+
+![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/responsibe%20menu.png)
+
 
