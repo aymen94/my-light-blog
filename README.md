@@ -57,7 +57,3 @@ contributions are more than welcome!
 ![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/login.png)
 
 ![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/dashboard.png)
-
-![Screenshot](https://raw.github.com/aymen94/my-light-blog/master/screen/responsibe%20menu.png)
-
-
